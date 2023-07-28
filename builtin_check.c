@@ -5,14 +5,14 @@
  * @command: The command to be checked
  * Return: Returns true if the command is a built-in command, false otherwise
  */
-bool builtin_check(const char *command)
+bool builtin_check(char *command)
 {
-	const char *built_ins[]  = {"exit", "env"};
+	char *built_ins[]  = {"exit", "env"};
 	int i, size = sizeof(built_ins) / sizeof(built_ins[0]);
 
 	for (i = 0; i < size; i++)
 	{
-		if (strcmp(command, built_ins[i]) == 0)
+		if (_strcmp(command, built_ins[i]) == 0)
 		{
 			return (true);
 		}
@@ -30,10 +30,10 @@ bool builtin_check(const char *command)
  */
 void builtin_handler(char **argv, char *copy_cmd, char *full_cmd, int num_tokn)
 {
-	if (strcmp(argv[0], "env") == 0)
+	if (_strcmp(argv[0], "env") == 0)
 	{
 		_env();
 	}
-	else if (strcmp(argv[0], "exit") == 0)
+	else if (_strcmp(argv[0], "exit") == 0)
 		exit_func(argv, copy_cmd, full_cmd, num_tokn);
 }

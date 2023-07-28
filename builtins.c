@@ -31,7 +31,7 @@ void exit_func(char **argv, char *copy_cmd, char *full_cmd, int num_tokn)
 	free(full_cmd);
 	free(copy_cmd);
 	if (argv[1] != NULL)
-		status = atoi(argv[1]);
+		status = _atoi_(argv[1]);
 
 	for (counter = 0; counter < num_tokn; counter++)
 		free(argv[counter]);

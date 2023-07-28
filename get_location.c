@@ -14,7 +14,7 @@ char *get_location(char *command)
 	int command_length;
 	struct stat buffer;
 
-	path = getenv("PATH");
+	path = _getenv("PATH");
 	path_copy = _strdup(path);
 	command_length = _strlen(command);
 	/* Let's break down the path variable and get all the directories available*/
